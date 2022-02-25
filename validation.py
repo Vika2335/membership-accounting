@@ -8,14 +8,7 @@ def faker():
         if abonid != res:
             print('Внимание, поддельный штрих-код')
 def valid():
-    if len(id) >= 3:
-        tire = id.find("-")
-        if tire == -1:
-            print('Не удалось распознать штрих-код')
-        else:
-            clientid = id[:tire]
-            abonid = id[(tire + 1):]
-            faker()
+    faker()
 else:
     print("Не удалось распознать штрих-код")
 
