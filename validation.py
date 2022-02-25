@@ -6,8 +6,8 @@ def unknowing():
     if abonid not in res:
         print('Неизвестный абонемент')
 def valid():
-    if len(id) >= 3:
-        tire = id.find("-")
+    if len(data) >= 3:
+        tire = data.find("-")
         if tire == -1:
             print('Не удалось распознать штрих-код')
         else:
