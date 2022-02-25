@@ -1,4 +1,4 @@
-id = str(input())
+from Scanner.Scanner import data
 
 res = worksheet.col_values(1)
 
@@ -11,8 +11,8 @@ def valid():
         if tire == -1:
             print('Не удалось распознать штрих-код')
         else:
-            clientid = id[:tire]
-            abonid = id[(tire+1):]
+            clientid = data[:tire]
+            abonid = data[(tire+1):]
             unknowing()  
     else:
         print("Не удалось распознать штрих-код")
