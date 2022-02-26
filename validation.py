@@ -8,9 +8,8 @@ def unknowing():
         print('Неизвестный абонемент')
 
 def faker():
-    if clientid != res1:
-        if abonid != res:
-            print('Внимание, поддельный штрих-код')
+    if (clientid not in res1) or (abonid not in res):
+        print('Внимание, поддельный штрих-код')
 
 def limit_check():
     for i in range(1, len(worksheet.col_values(1))):
