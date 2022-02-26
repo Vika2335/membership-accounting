@@ -1,4 +1,5 @@
 from Scanner.Scanner import data
+import re
 
 res = worksheet.col_values(1)
 res1 = worksheet.col_values(2)
@@ -25,18 +26,15 @@ def limit_check():
                     print('Лимит посещений по абонементу исчерпан')            
 
 def valid():
-    if len(data) >= 3:
-        tire = data.find("-")
-        if tire == -1:
-            print('Не удалось распознать штрих-код')
-        else:
-            clientid = data[:tire]
-            abonid = data[(tire+1):]
-            unknowing()
-            faker()
-            limit_check()
+    result = re.findall(r'^(\d+)-(\d+)', data)
+    if result and len(result) == 1:
+        clientid = result[0][0]
+        abonid = result[0][1]
+        unknowing()
+        faker()
+        limit_check()
     else:
-        print("Не удалось распознать штрих-код")
-
+        print('Не удалось распознать штрих-код')
+      
 if __name__ == '__main__':
     valid()
