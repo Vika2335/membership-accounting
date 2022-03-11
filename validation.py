@@ -1,3 +1,4 @@
+from gspread import spreadsheet
 from Scanner.Scanner import data
 import re
 
